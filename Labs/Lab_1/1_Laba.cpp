@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
 
-
 namespace Laba_1 {
     class Program {
         static void Main ( string[] args ) {
