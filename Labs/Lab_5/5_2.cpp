@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 
 namespace _5._2 {
 
-
-
     class Fraction {
         public double numerator;
         public double denominator;
