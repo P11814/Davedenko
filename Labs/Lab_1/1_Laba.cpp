@@ -44,50 +44,52 @@ namespace Laba_1 {
             // не совсем так. вторая строка и последующие это не продолжение предыдущей, а предыдущая, которая начинается со второго 
             // символа предыдущей строки. т.е. 2-ая строка должна начинаться с В, а у вас начинается с F
             // ИСПРАВИТЬ
+            // ИСПРАВЛЕНО
             int numOfSigns = 4;
-            Console.Write ( "\n--- 2 ---\nEnter num of strings: " );
-            A = int.Parse ( Console.ReadLine ( ) );
-            Console.WriteLine ( );
-            string alpha_string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            char[] alpha_char = alpha_string.ToCharArray ( );
-            count = 0;
-            for ( int i = 0; i < ( numOfSigns * A ); i++ ) {
-                count2++;
-                Console.Write ( "{0} ", alpha_char[count] );
-                if ( count2 == 4 ) {
-                    Console.Write ( "\n" );
-                    count2 = 0;
-                }
+            Console.Write ("\n--- 2 ---\nEnter num of strings: ");
+            A = int.Parse (Console.ReadLine ());
+            Console.WriteLine ();
+            string alpha_string = "ABCDEFGHIJKLMNOPQRSTUVWXYZABC";
+            char [] alpha_char = alpha_string.ToCharArray ();
+            for (int i = 0; i < A; i++) {                
+                for (int j = 0; j < numOfSigns; j++) {
+                    Console.Write ("{0} ", alpha_char [count+j]);
+                    }
                 count++;
-                if ( count == 26 ) {
-                    count = 0;
+                if (count==26) {
+                    count=0;
                 }
+                Console.WriteLine ();
             }
             
             //Задание 3. Определить, является ли введенное число числом-перевертышем.
             // Почему, если я ввожу число 15, ответа никакого нет? 
             // ДОДЕЛАТЬ
-            Console.Write ( "\n--- 3 ---\nEnter value >10: " );
-            Line = Console.ReadLine ( );
-            CharArr = new char[Line.Length];
-            CharArr = Line.ToCharArray ( );
-            Console.WriteLine ( );
-            count = 0;
-            A = Line.Length - 1;
-            B = int.Parse ( Line );
-            if ( B<11 ) { Console.Write ( "Hi there! Are you nut`s!!!\n" ); }
-            if ( B == 11 ) { Console.Write ( "It's polindrom\n" );  }
-
-            for ( int i = 0; i < ( A / 2 ); i++ ) {
-                if ( CharArr[i] == CharArr[A - count] ) {
-                    
-                    if ( i == (A / 2)-1 ) {
-                        Console.Write ( "It's polindrom\n" );
+            // ДОДЕЛАНО
+            Console.Write ("\n--- 3 ---\nEnter value: ");
+            count=0;
+            Line=Console.ReadLine ();
+            A=int.Parse (Line);
+            B=Line.Length;
+            char [] digits = Line.ToCharArray ();
+            if (A>20 || A==11) {
+                do {
+                    if (digits [count]!=digits [B-1]) {
+                        Console.WriteLine ("It`s not polindrom");
+                        Console.WriteLine (digits [count]);
+                        break;
                     }
-                } else {
-                    Console.Write ( "It's not polindrom\n" );
-                    break;
-                } count++; 
+                    if (digits [count]==digits [B-1]) {
+                        count++;
+                        B--;
+                    }
+                    if (count==Line.Length/2  || A==11 || A==-11) {
+                        Console.WriteLine ("It`s polindrom");
+                        break;
+                    }
+                } while (true);
+            } else {
+                Console.WriteLine ("It`s not polindrom");
             }
 
              //Задание 4. Проверка на  интервал с дополнительным условием
@@ -128,13 +130,21 @@ namespace Laba_1 {
            // пользователь должен вводить шаг, которые будет являться шагом цикла. и с таким шагом в заданном диапазоне необходимо
            // расчитать выражение
            // ПЕРЕДЕЛАТЬ
-            Console.WriteLine ( "\n--- 6 ---\nRange from -5 to 5" );
-            A = -5; B = 5;
-            for ( int i = A; i < B; i++ ) {
-                if ( i * 10 > A && i * 10 < B ) {
-                    Console.WriteLine ( "Step {0}*10={1}",i,i );
+           // ПЕРЕДЕЛАНО
+            Console.Write ("\n--- 6 ---\nRange from -5 to 5\nEnter value not more than 5: ");
+            Line=Console.ReadLine ();
+            count=int.Parse (Line);
+            A = -5;
+            B = 5;
+            if (count<10) {
+
+                for (int i = A; i <= B; i++) {
+                    if (count*i>=A && count*i<=B) {
+                        Console.Write ("{0} ", count*i);
+                    }                    
                 }
             }
+            Console.WriteLine ();
              
           
             // Задание 7
@@ -158,14 +168,20 @@ namespace Laba_1 {
            //Рассчитать сумму чисел 100 Фибоначчи : 1, 1, 2, 3, 5, 8 ..   Xn=X(n-1)+X(n-2)
             // сейчас программа выводит 100-ый член ряда, а вам надо вывести сумму всех элементов
             // ПЕРЕДЕЛАТЬ
-            Console.Write ( "\n--- 8 ---\n\nSum of 100 Fibonachi = " );
-            decimal a=0;
-            decimal b = 1;
-            decimal c = 0;
-            for ( int i = 0; i < 100; ++i ) {
-                c = a + b; a = b; b = c;
-            }
-            Console.WriteLine ("{0}\n\n", b.ToString ( ) );
+            // ПЕРЕДЕЛАНО
+            Console.Write ("Sum of 100 numbers = ");
+            ulong fib=0,fib1 = 0, fib2 = 1;
+            
+            int NumOfFib=10;
+            ulong sum=0;
+                for (int i = 1; i < NumOfFib+1; i++) {
+                    fib = fib2 + fib1;
+                    fib2 = fib1;
+                    fib1 = fib;
+                    sum+=fib;
+                    //Console.Write ("{0} ", fib);
+                }
+                Console.WriteLine ("{0} ",sum);
            
         }
     }
