@@ -19,16 +19,19 @@ namespace Laba_4_2 {
             Parse(str);
         }
         static void Parse (string str ) {
-            //забиваем слово в массив, если встречается орпеделенный символ
-            string [] SplitStr = str.Split (new Char [] { ' ', ',' });
-            a=int.Parse (SplitStr [0]);
-            b=int.Parse (SplitStr [1]);
-            Console.WriteLine ("a-{0} b-{1}", a, b);
+            try {
+
+                //забиваем слово в массив, если встречается орпеделенный символ
+                string [] SplitStr = str.Split (new Char [] { ' ', ',' });
+                a=int.Parse (SplitStr [0]);
+                b=int.Parse (SplitStr [1]);
+                Console.WriteLine ("a-{0} b-{1}", a, b);
+            } catch (FormatException) {
+                Console.WriteLine ("Wrong value");
+            }
         }
-
-
+        
     }//end class LineFunction
-
 
 
     class Program {
