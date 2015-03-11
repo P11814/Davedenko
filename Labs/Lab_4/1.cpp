@@ -60,7 +60,7 @@ namespace ClassWork {
             }
         }
 
-
+//
         // средняя оценка
         public void MiddleMark ( ) {
             Console.WriteLine ( "Выберите предмет: \n1.Программирование\n2.Администрирование\n3.Дизайн\n" );
