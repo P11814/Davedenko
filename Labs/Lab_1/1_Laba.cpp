@@ -182,7 +182,7 @@ namespace Laba_1 {
                     //Console.Write ("{0} ", fib);
                 }
                 Console.WriteLine ("{0} ",sum);
-           
+           //
         }
     }
 }
