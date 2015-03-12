@@ -69,7 +69,7 @@ namespace _5._2 {
 
     class Program {
         static void Main ( string[] args ) {
-            Fraction f = new Fraction ( 3, 6 );
+            Fraction f = new Fraction ( 3, 6 );//
             int a = 10;
             double d = 1.5;
             Fraction f1 = f * a;
