@@ -1,3 +1,4 @@
+// http://ru.onlinemschool.com/math/assistance/equation/gaus/
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +34,7 @@ namespace Laba_4_3 {
             A1-=A2*2;
             B1-=B2*2;
             C-=D*2;
-            // solution
+            // solution 
             x=C;
             y=D;
             Console.WriteLine ("  x={0}\n  y={1}\n", x, y);
