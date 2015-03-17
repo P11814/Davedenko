@@ -32,7 +32,7 @@ namespace Laba_6 {
             this.num = num;
             this.price = price;
         }
-        
+
 
 
 
@@ -99,23 +99,78 @@ namespace Laba_6 {
     public class Storage {
         static int numOfProduct = 0;// count of products
         static int sizeOfStorage=0;
-        
+
         Product [] product;// array of products
         public Storage ( int num ) {
             sizeOfStorage=num;
             product = new Product [num];
-            
+
         }// end constructor Storage
 
-        
-            
+        public void sortByPrice ( ) {
+            int [] tmp=new int [numOfProduct];
+            for (int i=0; i<numOfProduct; i++) {
+                tmp [i]=product [i].PRICE;
+            }
+            Array.Sort (tmp);
+            Console.WriteLine ("Sorted by price\n----------------------");
+            Console.WriteLine ("Name:     Number:    Price:\n");
+            for (int i=0; i<numOfProduct; i++) {
+                for (int j=0; j<numOfProduct; j++) {
+                    if (tmp [i]==product [j].PRICE) {
+                        Console.WriteLine ("{0}      {1} шт.     {2}  p.", product [j].NAME, product [j].NUM, product [j].PRICE);
+                    }
+                }
+            }
+            Console.WriteLine ("\n");
+
+        }//end sortByPrice
+
+        public void sortByNumber ( ) {
+            int [] tmp=new int [numOfProduct];
+            for (int i=0; i<numOfProduct; i++) {
+                tmp [i]=product [i].NUM;
+            }
+            Array.Sort (tmp);
+            Console.WriteLine ("Sorted by number\n----------------------");
+            Console.WriteLine ("Name:     Number:    Price:\n");
+            for (int i=0; i<numOfProduct; i++) {
+                for (int j=0; j<numOfProduct; j++) {
+                    if (tmp [i]==product [j].NUM) {
+                        Console.WriteLine ("{0}      {1} шт.     {2}  p.", product [j].NAME, product [j].NUM, product [j].PRICE);
+                    }
+                }
+            }
+            Console.WriteLine ("\n");
+        }  //end sortByNumber
+
+
+        public void sortByName ( ) {
+            string [] tmp=new string [numOfProduct];
+            for (int i=0; i<numOfProduct; i++) {
+                tmp [i]=product [i].NAME;
+            }
+            Array.Sort (tmp);
+            Console.WriteLine ("Sorted by name\n----------------------");
+            Console.WriteLine ("Name:     Number:    Price:\n");
+            for (int i=0; i<numOfProduct; i++) {
+                for (int j=0; j<numOfProduct; j++) {
+                    if (tmp [i]==product [j].NAME) {
+                        Console.WriteLine ("{0}      {1} шт.     {2}  p.", product [j].NAME, product [j].NUM, product [j].PRICE);
+                    }
+                }
+            }
+            Console.WriteLine ("\n");
+        }  //end sortByName
+
+
 
         public void addProduct ( string nam, int num, int price ) {
             if (numOfProduct!=sizeOfStorage) {
                 product [numOfProduct] = new Product (nam, num, price);
                 numOfProduct++;
                 product [numOfProduct-1].NUMPLACEOFPRODUCT=numOfProduct;
-                
+
             } else {
                 Console.WriteLine ("Склад заполнен");
             }
@@ -123,36 +178,39 @@ namespace Laba_6 {
 
 
         public void findProductByNumber ( int number ) {
+
+            Console.WriteLine ("Name:     Number:    Price:");
             for (int i = 0; i < numOfProduct; i++) {
                 if (product [i].NUMPLACEOFPRODUCT == number) {
                     Console.WriteLine (@"
-Name:   {0}
-Number: {1} шт.
-Price:  {2}  p.
+{0}      {1} шт.     {2}  p.
 ---------------
                ", product [i].NAME, product [i].NUM, product [i].PRICE);
                 }
             }
             if (product [numOfProduct-1].NUMPLACEOFPRODUCT< number) {
                 Console.WriteLine ("-------------------------------------\nThere is no product with this number.\n-------------------------------------\n");
-            }                      
+            }
         } // end findProductByNumber
 
 
         public void findProdByName ( string nam ) {
+
             for (int i = 0; i < numOfProduct; i++) {
                 if (product [i].NAME == nam) {
+                    Console.WriteLine ("Name:     Number:    Price:");
                     Console.WriteLine (@"
-Name:   {0}
-Number: {1} шт.
-Price:  {2}  p.
----------------
+{0}      {1} шт.     {2}  p.
+------------------------------
                ", product [i].NAME, product [i].NUM, product [i].PRICE);
-                }
-            }
-            if (product [numOfProduct - 1].NAME != nam) {
-                Console.WriteLine ("-------------------------------------\nThere is no product with this name.\n-------------------------------------\n");
-            }
+                    break;
+                }    
+                if (product [i].NAME != nam) {
+                    if (numOfProduct-1<=i) {
+                        Console.WriteLine ("-------------------------------------\nThere is no product with this name.\n-------------------------------------\n");
+                    }
+                }    
+            }        
         }// end findProdByName
 
 
@@ -163,12 +221,17 @@ Price:  {2}  p.
 
     class Program {
         static void Main ( string [] args ) {
-            
+
             Storage prod = new Storage (100);
             prod.addProduct ("apple", 20, 45);
             prod.addProduct ("bred", 200, 15);
             prod.addProduct ("banana", 76, 10);
-            prod.addProduct ("potato", 235, 25);
+            prod.addProduct ("potato", 235, 12);
+            prod.addProduct ("cola", 432, 98);
+            prod.addProduct ("pepsi", 195, 45);
+            prod.addProduct ("food3", 435, 16);
+            prod.addProduct ("peach", 498, 65);
+            prod.addProduct ("food5", 45, 35);
             string str;
             int numsearch = 0;
 
@@ -188,8 +251,9 @@ Price:  {2}  p.
             str = Console.ReadLine ();
             prod.findProdByName (str);
 
-            
-
+            prod.sortByPrice ();
+            prod.sortByNumber ();
+            prod.sortByName ();
         }
     }
 }
