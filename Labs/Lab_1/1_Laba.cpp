@@ -45,6 +45,7 @@ namespace Laba_1 {
             // символа предыдущей строки. т.е. 2-ая строка должна начинаться с В, а у вас начинается с F
             // ИСПРАВИТЬ
             // ИСПРАВЛЕНО
+            // ЗАЧТЕНО
             int numOfSigns = 4;
             Console.Write ("\n--- 2 ---\nEnter num of strings: ");
             A = int.Parse (Console.ReadLine ());
@@ -66,6 +67,7 @@ namespace Laba_1 {
             // Почему, если я ввожу число 15, ответа никакого нет? 
             // ДОДЕЛАТЬ
             // ДОДЕЛАНО
+            // ЗАЧТЕНО
             Console.Write ("\n--- 3 ---\nEnter value: ");
             count=0;
             Line=Console.ReadLine ();
@@ -131,6 +133,7 @@ namespace Laba_1 {
            // расчитать выражение
            // ПЕРЕДЕЛАТЬ
            // ПЕРЕДЕЛАНО
+           // ЗАЧТЕНО
             Console.Write ("\n--- 6 ---\nRange from -5 to 5\nEnter value not more than 5: ");
             Line=Console.ReadLine ();
             count=int.Parse (Line);
@@ -169,6 +172,7 @@ namespace Laba_1 {
             // сейчас программа выводит 100-ый член ряда, а вам надо вывести сумму всех элементов
             // ПЕРЕДЕЛАТЬ
             // ПЕРЕДЕЛАНО
+            // ЗАЧТЕНО
             Console.Write ("Sum of 100 numbers = ");
             ulong fib=0,fib1 = 0, fib2 = 1;
             
