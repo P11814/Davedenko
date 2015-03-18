@@ -22,7 +22,6 @@ namespace SomeWhere {
 } // end namespace SomeWhere
 
 
-
 namespace LABA_5_5 {
 
     class Program {
