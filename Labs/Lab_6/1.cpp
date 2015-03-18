@@ -39,7 +39,6 @@ namespace Laba_6 {
 
 
 
-
         public string NAME {
             set {
                 if (value.Length > 0)
