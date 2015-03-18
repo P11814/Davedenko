@@ -10,7 +10,6 @@ namespace _5._2 {
         public double numerator;
         public double denominator;
 
-
         public Fraction ( ) {
             numerator = 0;
             denominator = 0;
