@@ -54,6 +54,6 @@ namespace LABA_5_5 {
 
 
 
-        }
+        } 
     }
 }
