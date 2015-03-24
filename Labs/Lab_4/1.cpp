@@ -28,7 +28,7 @@ namespace ClassWork {
             fathersname = fathersname_;
             age = age_;
             group = group_;
-            ArrRating[0] = new int[1];
+            ArrRating[0] = new int[1]; // не не. массив должен быть один и рваный, а не 3 массива
             ArrRating[1] = new int[1];
             ArrRating[2] = new int[1];
         }
@@ -106,6 +106,7 @@ namespace ClassWork {
 
             while ( value != 0 ) {
 
+                // слили код, видела я его уже у кого-то...
                 Console.WriteLine ( "1. Информация о студенте\n2. Выставить оценку\n3. Просмотреть оценки\n4. Средняя оценка\n0. Выход\n------------------------" );
                 value = int.Parse ( Console.ReadLine ( ) );// парсим значение в инт
                 Console.WriteLine ( );
