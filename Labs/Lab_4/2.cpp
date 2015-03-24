@@ -25,7 +25,8 @@ namespace Laba_4_2 {
                 string [] SplitStr = str.Split (new Char [] { ' ', ',' });
                 a=int.Parse (SplitStr [0]);
                 b=int.Parse (SplitStr [1]);
-                Console.WriteLine ("a-{0} b-{1}", a, b);
+                Console.WriteLine ("a-{0} b-{1}", a, b); //старайтесь не выводить данные через тире, особенно там, где 
+                // выводятся числа. кажется, что число отрицательной. выводите лучше знак =
             } catch (FormatException) {
                 Console.WriteLine ("Wrong value");
             }
