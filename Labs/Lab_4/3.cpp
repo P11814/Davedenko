@@ -75,7 +75,8 @@ A2*x + B2*y = D"+"\n");
 
             Console.Write ("A1 = ");
             while (func.A1 == 0) {
-                try {
+                try { // код на введение коэффициентов повторяется 6 раз. такие вещи надо помещать в отдельный 
+                // закрытый метод, чтобы не копировать лишний раз код. мы ж не в Индии
                     func.A1 = int.Parse (Console.ReadLine ());
                 } catch (FormatException) {
                     Console.WriteLine ("Введите число");
