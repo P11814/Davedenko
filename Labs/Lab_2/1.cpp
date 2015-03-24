@@ -16,7 +16,8 @@ namespace Laba_2 {
                               - определить, есть ли в данной строке повторяющиеся слова, и вывести их на экран.
             */
 
-            string str = "be,hair,help,maid,because,is,hair,she,is,jealous";
+            string str = "be,hair,help,maid,because,is,hair,she,is,jealous"; // если добавлю в конце строки слово is, то оно
+            // становится повторяющимся, но почему-то не выводит на экран 
             Console.WriteLine ( str );
             Console.WriteLine ( "--------------------------------------------" );
             string[] SplitStr = str.Split ( new Char[] { ' ', ',', '.', ':', '!', '?', '\t' } );//забиваем слово в массив, если встречается орпеделенный символ
