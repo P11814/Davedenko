@@ -248,11 +248,12 @@ namespace Laba_6 {
 
             Console.Write ("Ведите наименование товара, который вы хотите найти: ");
             str = Console.ReadLine ();
-            prod.findProdByName (str);
+            prod.findProdByName (str); // получается, если у вас 2 и более продуктов с одинаковым наименованием, то выводится только первый. это не правильно
 
-            prod.sortByPrice ();
+            prod.sortByPrice (); // сортировки отлично
             prod.sortByNumber ();
             prod.sortByName ();
+            //а где обращение к продукту по индексу? индексатор надо сделать в классе
         }
     }
 }
