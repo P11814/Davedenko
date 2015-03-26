@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 namespace Laba_2 {
     class Program {
         static void Main ( string[] args ) {
-
             /*     Задание 1.
                    Дана строка текста, в которой слова разделены запятыми. Необходимо:
                               - определить количество слов в строке;
