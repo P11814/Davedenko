@@ -30,18 +30,19 @@ namespace Laba_2
             // создание и инициалиация рваного массива
             Random rand = new Random();
             int r;
+            //рандомные размеры для первого
             int sizeArr1 = rand.Next(1, 10);
             int[][] arr1 = new int[sizeArr1][];
-
+            //рандомные размеры для второго
             int sizeArr2 = rand.Next(1, 10);
             int[][] arr2 = new int[sizeArr2][];
-            //рандомные размеры для первого
+            //рандомные длины строк для первого
             for (int i = 0; i < sizeArr1; i++)
             {
                 r = rand.Next(1, 10);
                 arr1[i] = new int[r];
             }
-            //рандомные размеры для первого
+            //рандомные длины строк для второго
             for (int i = 0; i < sizeArr2; i++)
             {
                 r = rand.Next(1, 10);
