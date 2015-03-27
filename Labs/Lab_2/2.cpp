@@ -5,15 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Laba_2 {
+namespace Laba_2
+{
 
 
 
-    class Program {
-        public static void compJagArr ( ) {
+    class Program
+    {
+        public static void compJagArr()
+        {
 
         }
-        static void Main ( string [] args ) {
+        static void Main(string[] args)
+        {
 
 
             //Задание 2. Массивы
@@ -22,80 +26,146 @@ namespace Laba_2 {
 
             /// создание и инициалиация рваного массива
             // массивы надо вводить рандомно. рандомно размеры, рандомно значения
-            int [] [] arr1=new int [3] [];
-            arr1 [0]=new int [3] { 1, 2, 3 };
-            arr1 [1]=new int [1] { 1 };
-            arr1 [2]=new int [5] { 1, 2, 3, 4, 5 };
+
             // создание и инициалиация рваного массива
-            int [] [] arr2=new int [4] [];
-            arr2 [0]=new int [2] { 1, 2 };
-            arr2 [1]=new int [4] { 1, 2, 3, 4 };
-            arr2 [2]=new int [6] { 1, 2, 3, 4, 5, 6 };
-            arr2 [3]=new int [3] { 1, 2, 3};
+            Random rand = new Random();
+            int r;
+            int sizeArr1 = rand.Next(1, 10);
+            int[][] arr1 = new int[sizeArr1][];
+
+            int sizeArr2 = rand.Next(1, 10);
+            int[][] arr2 = new int[sizeArr2][];
+            //рандомные размеры для первого
+            for (int i = 0; i < sizeArr1; i++)
+            {
+                r = rand.Next(1, 10);
+                arr1[i] = new int[r];
+            }
+            //рандомные размеры для первого
+            for (int i = 0; i < sizeArr2; i++)
+            {
+                r = rand.Next(1, 10);
+                arr2[i] = new int[r];
+            }
 
             // макс длинна рваного массива
-            int maxLengthArray=arr1.Length>arr2.Length?arr1.Length:arr2.Length;
+            int maxLengthArray = arr1.Length > arr2.Length ? arr1.Length : arr2.Length;
             // мин длина рваного массива
-            int minLengthArray=arr1.Length<arr2.Length?arr1.Length:arr2.Length;    
-            // времменый рванный массив с макс длинной
-            int [] [] tmpArr=new int [maxLengthArray] [];
+            int minLengthArray = arr1.Length < arr2.Length ? arr1.Length : arr2.Length;
 
-
-            // цикл на размер меньшего массива, чтобы не выйти за границу дозволенного
-            for (int i=0; i<minLengthArray; i++) {
-                //если строка превого массива больше второго
-                if (arr1 [i].Length>arr2 [i].Length) {
-                   
-                    tmpArr [i]=new int [arr1 [i].Length];
-
-                    for (int j=0; j<arr2 [i].Length; j++) {
-                        tmpArr [i] [j]=arr2 [i] [j];
-                    }
-                    arr2 [i]=new int [arr1 [i].Length];
-
-                    for (int j=0; j<arr2 [i].Length; j++) {
-                        arr2 [i] [j]=tmpArr [i] [j];
-                        
-                    }  
-                }//end if
-
-
-                //если строка второго массива больше первого
-                if (arr2 [i].Length>arr1 [i].Length) {
-                    
-                    tmpArr [i]=new int [arr2 [i].Length];
-
-                    for (int j=0; j<arr1 [i].Length; j++) {
-                        tmpArr [i] [j]=arr1 [i] [j];
-                    }
-
-                    arr1 [i]=new int [arr2 [i].Length];
-                    
-                    for (int j=0; j<arr2 [i].Length; j++) {
-                        arr1 [i] [j]=tmpArr [i] [j];
-                    }
-                
-
-                }//end if
-                
-            }//end for
-
-
-// и почему выводятся 2 массива? нужен один массив, содержащий разность первых
-            for (int i=0; i<arr1.Length; i++) {
-                for (int j=0; j<arr1 [i].Length; j++) {
-                    Console.Write ("{0} ", arr1 [i] [j]);
+            //рандомные значения для первого
+            for (int i = 0; i < sizeArr1; i++)
+            {
+                for (int j = 0; j < arr1[i].Length; j++)
+                {
+                    r = rand.Next(1, 10);
+                    arr1[i][j] = r;
                 }
-                Console.WriteLine ();
             }
-            Console.WriteLine ();
+            //рандомные значения для второго
+            for (int i = 0; i < sizeArr2; i++)
+            {
+                for (int j = 0; j < arr2[i].Length; j++)
+                {
+                    r = rand.Next(1, 10);
+                    arr2[i][j] = r;
+                }
+            }
+            //вывод первого
+            Console.WriteLine("Исходные массивы:\n1.\n-------------------");
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                for (int j = 0; j < arr1[i].Length; j++)
+                {
 
-             for (int i=0; i<arr2.Length; i++) {
-                 for (int j=0; j<arr2 [i].Length; j++) {
-                     Console.Write ("{0} ",arr2 [i] [j]);
-                 }
-                 Console.WriteLine ();
-             }
+                    Console.Write("{0} ", arr1[i][j]);
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+            //вывод второго
+            Console.WriteLine("2.\n-------------------");
+            for (int i = 0; i < arr2.Length; i++)
+            {
+                for (int j = 0; j < arr2[i].Length; j++)
+                {
+
+                    Console.Write("{0} ", arr2[i][j]);
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+
+            // времменый рванный массив с макс длинной
+            int[][] tmpArr = new int[maxLengthArray][];
+
+            int ok=0;
+
+            if (maxLengthArray == arr1.Length)
+            {
+                for (int i = 0; i < maxLengthArray; i++)
+                {
+                    tmpArr[i] = new int[arr1[i].Length];
+                }
+                ok=1;
+            }
+            else
+            {
+                for (int i = 0; i < maxLengthArray; i++)
+                {
+                    tmpArr[i] = new int[arr2[i].Length];
+                }
+                
+            }
+
+
+            if (ok == 1)
+            {
+                for (int i = 0; i < minLengthArray; i++)
+                {
+                    if (tmpArr[i].Length < arr2[i].Length)
+                    {
+                        tmpArr[i] = new int[arr2[i].Length];
+
+                    }
+                }
+
+            }
+            else
+            {
+                for (int i = 0; i < minLengthArray; i++)
+                {
+                    if (tmpArr[i].Length < arr1[i].Length)
+                    {
+                        tmpArr[i] = new int[arr1[i].Length];
+
+                    }
+                }
+
+            }
+
+            int minLengthString;
+            for (int i = 0; i < minLengthArray; i++)
+            {
+                minLengthString=arr1[i].Length<arr2[i].Length ? arr1[i].Length : arr2[i].Length;
+                //Console.WriteLine("min string {0}", minLengthString);
+                for (int j = 0; j < minLengthString; j++)
+                {
+                    tmpArr[i][j] = arr1[i][j]-arr2[i][j];
+                }
+            }
+
+
+            Console.WriteLine("Итоговый массив:\n-------------------");
+            for (int i = 0; i < tmpArr.Length; i++)
+            {
+                for (int j = 0; j < tmpArr[i].Length; j++)
+                {
+                    Console.Write("{0} ", tmpArr[i][j]);
+                }
+                Console.WriteLine();
+            }
+
 
 
         }
