@@ -21,7 +21,7 @@ namespace ConsoleApplication1
             {
                 MaxValue();
             }
-        
+    
         }
     }// end SomeEvent
 
