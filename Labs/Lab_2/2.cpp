@@ -41,7 +41,7 @@ namespace Laba_2
             {
                 r = rand.Next(1, 10);
                 arr1[i] = new int[r];
-            }
+            } 
             //рандомные длины строк для второго
             for (int i = 0; i < sizeArr2; i++)
             {
