@@ -31,7 +31,6 @@ namespace _5._2 {
             return fract;
         }
 
-
         public static Fraction operator + ( Fraction f, double x ) {
             Fraction fract = new Fraction ( );
             double b = 0;
