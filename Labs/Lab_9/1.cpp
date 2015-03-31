@@ -33,7 +33,6 @@ namespace ConsoleApplication1
         }
     }
 
-
     class Program
     {
         
