@@ -9,7 +9,7 @@ namespace Laba_1 {
     class Program {
         static void Main ( string[] args ) {
             
-            
+        
             int A = 0, B = 0, C = 0, count = 0, count2 = 0, TmpValue = 0; ;
             int[] IntArr = new int[100];
             char[] CharArr = new char[0];
