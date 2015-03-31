@@ -49,7 +49,7 @@ namespace _5._2 {
             double max = ( fract.denominator > f.denominator ) ? fract.denominator : f.denominator;
             double min = ( fract.denominator < f.denominator ) ? fract.denominator : f.denominator;
             b = max;
-
+ 
             do {
                 count = max % min;
                 max += b;
