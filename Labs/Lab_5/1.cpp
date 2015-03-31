@@ -60,7 +60,7 @@ namespace Laba_5_1 {
             public override string ToString ( ) {
                 string x = this.x.ToString ();
                 string y = this.y.ToString ();
-                return   "("+ x + "," + y + ")";
+                return   "("+ x + ", i" + y + ")";
             }
 
         }   //end class Complex
