@@ -30,7 +30,7 @@ namespace Laba_8 {
         void buildRoof ();
     }
 
-
+ 
 
     public interface IPart {
         /*
