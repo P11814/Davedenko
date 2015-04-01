@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/*
+/* 
 Реализовать класс для комплексного числа.Выполнть перегрузку всех необходимых операторов
  * для успешной компиляции следующего фрагментного кода:
  * Complex z=new Complex (1, 1);
