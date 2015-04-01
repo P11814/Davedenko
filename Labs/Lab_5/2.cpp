@@ -88,7 +88,9 @@ namespace _5._2 {
             double min = fract.d < fract.n ? fract.d : fract.n;
             //Console.WriteLine ( "max={0} min={1} ", max,min );
             //ищем НОК
-            double NOK = 0;
+            double NOK = 0; // что ж вы делаете то. одинаковый подсчет НОК 3 раза в разных перегрузках. 
+            // хорошие программисты повторяющийся код помещают в функцию и в 3-ех перегрузках просто вызывают эту функцию!!!
+        
             do {
                 NOK += max;
             } while ( NOK % min != 0 );
