@@ -19,4 +19,4 @@ namespace Laba_3 {
             Console.WriteLine (result);
         }
     }
-}
+} 
